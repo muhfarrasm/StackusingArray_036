@@ -24,7 +24,7 @@ public:
 		stack_array[top] = element;
 
 		cout << endl;
-		cout << element << "ditambahkan(pushed)." << endl;
+		cout << element << " ditambahkan(pushed)." << endl;
 
 		return element;
 	}
@@ -57,7 +57,50 @@ public:
 			}
 		}
 	}
-
-
-
 };
+
+int main() {
+	Program skom;
+
+	while (true) {
+		cout << endl;
+		cout << "\n---Stack Menu---\n";
+		cout << "1. Push";
+		cout << "\n2. POP";
+		cout << "\n3. Display";
+		cout << "\n4. Exit";
+		cout << "\nMasukan pilihan kamuuu:";
+		string input;
+		getline(cin, input);
+		char ch = (input.empty() ? '0' : input[0]);
+		switch (ch) {
+
+		case '1': {
+			cout << "\nMasukan Element : ";
+			string element;
+			getline(cin, element);
+			skom.push(element);
+			break;
+		}
+		case '2':
+			if (skom.empty()) {
+				cout << "\nStack empty : ";
+				break;
+			}
+			skom.pop();
+			break;
+
+		case '3':
+			skom.display();
+			break;
+
+		case '4':
+			return 0;
+		default:
+			cout << "\nInvalid Choice. " << endl;
+			break;
+
+
+		}
+	}
+}
