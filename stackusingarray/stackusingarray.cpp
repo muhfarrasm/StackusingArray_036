@@ -47,6 +47,17 @@ public:
 	}
 
 
+	void display() {
+		if (empty()) {
+			cout << "\nStack is empty." << endl;
+		}
+		else {
+			for (int temp = top; temp >= 0; temp--) {
+				cout << stack_array[temp] << endl;
+			}
+		}
+	}
+
 
 
 };
